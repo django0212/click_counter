@@ -3,10 +3,11 @@ console.clear()
 var ct = 0;
 var time = 60;
 var timing;
-
+var round = 1;
 
 function startTime() {
 	timing = setInterval(deduct, 1000);
+	document.getElementById("round").innerHTML = `Round ${round}.`;
 }
 
 function dis() {
@@ -25,8 +26,22 @@ function deduct() {
 	} else {
 		clearInterval(timing);
 		alert(`Your click count is ${ct}.`);
+		createTable();
 		time = 60;
+		ct = 0;
+		round++;
 		document.getElementById("count").disabled = true;
 		document.getElementById("start").disabled = false;
 	}
+}
+
+function createTable() {
+	var table = document.getElementById("scores");
+	var temp = `
+		<tr>
+			<td>${round}</td>
+			<td>${ct}</td>
+		</tr>
+	`
+	table.innerHTML += temp;
 }
