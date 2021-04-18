@@ -1,8 +1,16 @@
 .wrapper {
 	text-align: center;
+	margin-left: auto;
+  	margin-right: auto;
 }
 
 .button {
 	position: absolute;
 	top: 50%;
+}
+
+table, th, td {
+	border: 2px solid #ccc;
+	padding: 2px;
+	width: 25%;
 }
